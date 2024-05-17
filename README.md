@@ -66,7 +66,7 @@ class Manager:
         self.data_provider = data_provider
         self.logger = logger or logging.getLogger(__name__)
 
-    def process_data(self):
+    def __call__(self):
         data = self.data_provider.get_data()
         # Code to process the data.
         pass
@@ -77,6 +77,6 @@ if __name__ == "__main__":
     data_provider = FileDataProvider("path/to/file.txt", logger)
     # data_provider = ApiDataProvider("https://example.com/api", "12345", logger)
     manager = Manager(data_provider, logger)
-    manager.process_data()
+    manager()
 ```
 In this example, each class has a single, well-defined responsibility, making it easier to understand, maintain, and extend. The DataProvider class is open for extension (new data providers can be added) but closed for modification (the existing code doesn't need to change), and the FileDataProvider and ApiDataProvider classes can be used interchangeably wherever a DataProvider is expected. The Manager class depends on abstractions (DataProvider) rather than concrete implementations (FileDataProvider, ApiDataProvider), making it more flexible and easier to test.
