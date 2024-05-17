@@ -7,6 +7,7 @@
 * Use version control (such as Git) to track changes to your code and collaborate with others.
 * Use continuous integration (CI) and continuous deployment (CD) practices to automate the testing and deployment of your code.
 * Keep your code modular and loosely coupled, as this can improve code reusability and maintainability.
+* Use a requirements.txt to manage the dependencies 
 
 #### Variables
 * The names of variables should be long and human-readable, with no single-letter names.
