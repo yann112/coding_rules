@@ -1,6 +1,9 @@
+correct the following readme
+
 ### Coding Rules
 
 * All methods, classes, functions, and modules should have a docstring in Google format.
+* Use descriptive, meaningful function and method names that clearly convey their purpose. For example, get_user_by_id is a better name than get_data.
 * The types of arguments should be included in the function signature, like this:
 ```python
 def my_function(str_my_string: str) -> None:
@@ -13,6 +16,7 @@ int_number_of_classes = 10
 dict_of_my_clients_and_phone_number = {"Alice": "555-1234", "Bob": "555-5678"}
 list_of_yellow_fruits = ["banana", "pineapple", "lemon"]
 ```
+* Follow the PEP 8 style guide for Python code using flake8.
 * A logger should be passed to each class and initialized like this:
 ```python
 import logging
@@ -22,13 +26,24 @@ class JsonFileHistoryExtractor:
         """Extract history of measures from the same aircraft as the input JSON file in the last n months.
         """
         self.logger = logger or logging.getLogger(__name__)
+```
+* Use exception handling to gracefully handle errors and unexpected conditions in your code. For example:
+```python
+try:
+    # Code that may raise an exception.
+except ExceptionType:
+    # Code to handle the exception.
+```
+* Use unit tests to verify the correctness of your code and catch regressions by using pytest or unitest framework.
+* Use version control (such as Git) to track changes to your code and collaborate with others.
+* Use continuous integration (CI) and continuous deployment (CD) practices to automate the testing and deployment of your code.
+* Keep your code modular and loosely coupled, as this can improve code reusability and maintainability.
 * The organization of the code should adhere to the SOLID principles:
 	+ **Single Responsibility Principle**: Each class or module should have a single, well-defined responsibility.
 	+ **Open/Closed Principle**: The code should be open for extension (new features or functionality can be added) but closed for modification (the existing code doesn't need to change).
 	+ **Liskov Substitution Principle**: Subtypes should be substitutable for their base types without affecting the correctness of the program.
 	+ **Interface Segregation Principle**: The code should depend on narrowly-defined interfaces rather than broad, generic ones.
 	+ **Dependency Inversion Principle**: The code should depend on abstractions (interfaces or abstract base classes) rather than concrete implementations.
-```
 
 ### SOLID Principles Example
 
