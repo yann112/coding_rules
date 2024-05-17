@@ -1,5 +1,3 @@
-Sure, here's the updated version of the coding rules with the new function example:
-
 ### Coding Rules
 
 #### General
