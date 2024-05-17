@@ -1,18 +1,15 @@
+Sure, here's the updated version of the coding rules with the new function example:
+
 ### Coding Rules
 
+#### General
+
 * All methods, classes, functions, and modules should have a docstring in Google format.
-* Use descriptive, meaningful function and method names that clearly convey their purpose. For example, get_user_by_id is a better name than get_data.
+* Use descriptive, meaningful function and method names that clearly convey their purpose. For example, get\_user\_by\_id is a better name than get\_data.
 * The types of arguments should be included in the function signature, like this:
 ```python
 def my_function(str_my_string: str) -> None:
     pass
-```
-* The names of variables should be long and human-readable, with no single-letter names. They should also be prefixed with their type, like this:
-```python
-str_my_fantastic_phrases = ["hello world", "goodbye moon"]
-int_number_of_classes = 10
-dict_of_my_clients_and_phone_number = {"Alice": "555-1234", "Bob": "555-5678"}
-list_of_yellow_fruits = ["banana", "pineapple", "lemon"]
 ```
 * Follow the PEP 8 style guide for Python code using flake8.
 * A logger should be passed to each class and initialized like this:
@@ -32,10 +29,50 @@ try:
 except ExceptionType:
     # Code to handle the exception.
 ```
-* Use unit tests to verify the correctness of your code and catch regressions by using pytest or unitest framework.
+* Use unit tests to verify the correctness of your code and catch regressions by using pytest or unittest framework.
 * Use version control (such as Git) to track changes to your code and collaborate with others.
 * Use continuous integration (CI) and continuous deployment (CD) practices to automate the testing and deployment of your code.
 * Keep your code modular and loosely coupled, as this can improve code reusability and maintainability.
+
+#### Variables
+
+* The names of variables should be long and human-readable, with no single-letter names.
+* They should also be prefixed with their type, like this:
+```python
+str_my_fantastic_phrases = ["hello world", "goodbye moon"]
+int_number_of_classes = 10
+dict_of_my_clients_and_phone_number = {"Alice": "555-1234", "Bob": "555-5678"}
+list_of_yellow_fruits = ["banana", "pineapple", "lemon"]
+```
+
+#### Functions
+
+* Here's an example of a function with a Google-style docstring:
+```python
+def calculate_average(numbers: List[float]) -> float:
+    """Calculates the average of a list of numbers.
+
+    Args:
+        numbers (List[float]): A list of floating-point numbers.
+
+    Returns:
+        float: The average of the numbers in the list.
+
+    Raises:
+        ValueError: If the list of numbers is empty.
+
+    Example:
+        >>> calculate_average([1.0, 2.0, 3.0])
+        2.0
+    """
+    if not numbers:
+        raise ValueError("The list of numbers cannot be empty.")
+
+    return sum(numbers) / len(numbers)
+```
+
+#### Classes and Methods
+
 * The organization of the code should adhere to the SOLID principles:
 	+ **Single Responsibility Principle**: Each class or module should have a single, well-defined responsibility.
 	+ **Open/Closed Principle**: The code should be open for extension (new features or functionality can be added) but closed for modification (the existing code doesn't need to change).
