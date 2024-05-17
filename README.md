@@ -1,39 +1,14 @@
 ### Coding Rules
 
 #### General
-
 * All methods, classes, functions, and modules should have a docstring in Google format.
-* Use descriptive, meaningful function and method names that clearly convey their purpose. For example, get\_user\_by\_id is a better name than get\_data.
-* The types of arguments should be included in the function signature, like this:
-```python
-def my_function(str_my_string: str) -> None:
-    pass
-```
 * Follow the PEP 8 style guide for Python code using flake8.
-* A logger should be passed to each class and initialized like this:
-```python
-import logging
-
-class JsonFileHistoryExtractor:
-    def __init__(self, logger: logging.Logger = None):
-        """Extract history of measures from the same aircraft as the input JSON file in the last n months.
-        """
-        self.logger = logger or logging.getLogger(__name__)
-```
-* Use exception handling to gracefully handle errors and unexpected conditions in your code. For example:
-```python
-try:
-    # Code that may raise an exception.
-except ExceptionType:
-    # Code to handle the exception.
-```
 * Use unit tests to verify the correctness of your code and catch regressions by using pytest or unittest framework.
 * Use version control (such as Git) to track changes to your code and collaborate with others.
 * Use continuous integration (CI) and continuous deployment (CD) practices to automate the testing and deployment of your code.
 * Keep your code modular and loosely coupled, as this can improve code reusability and maintainability.
 
 #### Variables
-
 * The names of variables should be long and human-readable, with no single-letter names.
 * They should also be prefixed with their type, like this:
 ```python
@@ -44,8 +19,10 @@ list_of_yellow_fruits = ["banana", "pineapple", "lemon"]
 ```
 
 #### Functions
-
-* Here's an example of a function with a Google-style docstring:
+* Use descriptive, meaningful function and method names that clearly convey their purpose. For example, get\_user\_by\_id is a better name than get\_data.
+* Use exception handling to gracefully handle errors and unexpected conditions in your code.
+* The types of arguments should be included in the function signature.
+* Here's an example of a function:
 ```python
 def calculate_average(numbers: List[float]) -> float:
     """Calculates the average of a list of numbers.
@@ -70,7 +47,16 @@ def calculate_average(numbers: List[float]) -> float:
 ```
 
 #### Classes and Methods
+* A logger should be passed to each class and initialized like this:
+```python
+import logging
 
+class JsonFileHistoryExtractor:
+    def __init__(self, logger: logging.Logger = None):
+        """Extract history of measures from the same aircraft as the input JSON file in the last n months.
+        """
+        self.logger = logger or logging.getLogger(__name__)
+```
 * The organization of the code should adhere to the SOLID principles:
 	+ **Single Responsibility Principle**: Each class or module should have a single, well-defined responsibility.
 	+ **Open/Closed Principle**: The code should be open for extension (new features or functionality can be added) but closed for modification (the existing code doesn't need to change).
