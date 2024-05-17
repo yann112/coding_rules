@@ -1,5 +1,3 @@
-correct the following readme
-
 ### Coding Rules
 
 * All methods, classes, functions, and modules should have a docstring in Google format.
