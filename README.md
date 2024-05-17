@@ -13,12 +13,6 @@ int_number_of_classes = 10
 dict_of_my_clients_and_phone_number = {"Alice": "555-1234", "Bob": "555-5678"}
 list_of_yellow_fruits = ["banana", "pineapple", "lemon"]
 ```
-* The organization of the code should adhere to the SOLID principles:
-	+ **Single Responsibility Principle**: Each class or module should have a single, well-defined responsibility.
-	+ **Open/Closed Principle**: The code should be open for extension (new features or functionality can be added) but closed for modification (the existing code doesn't need to change).
-	+ **Liskov Substitution Principle**: Subtypes should be substitutable for their base types without affecting the correctness of the program.
-	+ **Interface Segregation Principle**: The code should depend on narrowly-defined interfaces rather than broad, generic ones.
-	+ **Dependency Inversion Principle**: The code should depend on abstractions (interfaces or abstract base classes) rather than concrete implementations.
 * A logger should be passed to each class and initialized like this:
 ```python
 import logging
@@ -28,6 +22,12 @@ class JsonFileHistoryExtractor:
         """Extract history of measures from the same aircraft as the input JSON file in the last n months.
         """
         self.logger = logger or logging.getLogger(__name__)
+* The organization of the code should adhere to the SOLID principles:
+	+ **Single Responsibility Principle**: Each class or module should have a single, well-defined responsibility.
+	+ **Open/Closed Principle**: The code should be open for extension (new features or functionality can be added) but closed for modification (the existing code doesn't need to change).
+	+ **Liskov Substitution Principle**: Subtypes should be substitutable for their base types without affecting the correctness of the program.
+	+ **Interface Segregation Principle**: The code should depend on narrowly-defined interfaces rather than broad, generic ones.
+	+ **Dependency Inversion Principle**: The code should depend on abstractions (interfaces or abstract base classes) rather than concrete implementations.
 ```
 
 ### SOLID Principles Example
@@ -36,8 +36,6 @@ Here's an example of how the SOLID principles can be applied to a set of classes
 ```python
 from abc import ABC, abstractmethod
 import logging
-
-# Single Responsibility Principle: Each class has a single, well-defined responsibility.
 
 class DataProvider(ABC):
     @abstractmethod
@@ -62,14 +60,6 @@ class ApiDataProvider(DataProvider):
     def get_data(self) -> str:
         # Code to call the API and get the data.
         pass
-
-# Open/Closed Principle: The DataProvider class is open for extension (new data providers can be added) but closed for modification (the existing code doesn't need to change).
-
-# Liskov Substitution Principle: The FileDataProvider and ApiDataProvider classes can be used interchangeably wherever a DataProvider is expected.
-
-# Interface Segregation Principle: The DataProvider interface is narrowly focused and doesn't contain any methods that aren't relevant to all data providers.
-
-# Dependency Inversion Principle: The Manager class depends on abstractions (DataProvider) rather than concrete implementations (FileDataProvider, ApiDataProvider).
 
 class Manager:
     def __init__(self, data_provider: DataProvider, logger: logging.Logger = None):
