@@ -11,13 +11,6 @@
 
 #### Variables
 * The names of variables should be long and human-readable, with no single-letter names.
-* They should also be prefixed with their type, like this:
-```python
-str_my_fantastic_phrases = ["hello world", "goodbye moon"]
-int_number_of_classes = 10
-dict_of_my_clients_and_phone_number = {"Alice": "555-1234", "Bob": "555-5678"}
-list_of_yellow_fruits = ["banana", "pineapple", "lemon"]
-```
 
 #### Functions
 * Use descriptive, meaningful function and method names that clearly convey their purpose. For example, get\_user\_by\_id is a better name than get\_data.
